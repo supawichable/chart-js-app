@@ -73,7 +73,7 @@ zipを解凍して、Nodeの環境で次のコマンドで実行できます。
 npm i
 
 # アプリを実行する(Hot Reloadあり)
-node start
+npm start
 ```
 
 ### Packages
@@ -119,7 +119,7 @@ CDN
 docker-compose up -d
 
 # コンテナでアプリの実行
-docker-compose exec app /bin/bash
+docker-compose exec npm start
 ```
 
 ブラウザーで <http://localhost:3004/>をロードして、出力を確認します。
