@@ -1,4 +1,7 @@
-# コーディングテスト
+# Coding Test
+
+- [日本語](./README.md)
+- [English](./README-en.md)
 
 ## 課題について
 
@@ -56,11 +59,6 @@ License: CC BY-SA 3.0
 
 このほか、改善提案もOKです。
 
-
-## アプリの環境について
-
-Node.jsのExpressで作った
-
 ### Commands
 
 アプリの実行方法です。
@@ -76,6 +74,8 @@ npm i
 npm start
 ```
 
+ブラウザーで <http://localhost:3000/>をロードして、出力を確認します。
+
 ### Packages
 
 Node
@@ -86,9 +86,7 @@ CDN
 - [Chartjs](https://www.chartjs.org/docs/latest/): グラフのライブラリ
 - [axios](https://github.com/axios/axios): HTTP client
 
-ブラウザーで <http://localhost:3000/>をロードして、出力を確認します。
-
-## Option
+## An example of Development environment
 
 この先はQunaSysの新規事業のチームで共有している開発環境についてのまとめです。
 余裕があればDockerの環境構築にも挑戦してみてください。
