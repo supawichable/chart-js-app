@@ -1,4 +1,4 @@
-[
+export const cereals = [
     {
         "name": "100% Bran",
         "mfr": "N",
