@@ -69,14 +69,14 @@ export default function Home(props: any) {
   return (
     <>
       <Head>
-        <title>coding-test</title>
-        <meta name="description" content="DMSチームのコーディング課題です。" />
+        <title>chart-js-app</title>
+        <meta name="description" content="Chart.jsで散布図を表示するアプリ" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
         <section style={{ padding: '10pt' }}>
-          <h1>コーディング課題</h1>
+          <h1>chart-js-app</h1>
           <p>シリアルのデータ</p>
           <div style={{ width: '400pt' }}>
             <canvas id="myChart" width="300" height="300"></canvas>
