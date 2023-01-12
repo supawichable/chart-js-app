@@ -91,12 +91,9 @@ DBコンテナへのデータ投入については、このREADME.md下部にあ
 
 ## アプリケーションの開発環境
 
-開発にはNodejsの環境が必要です。準備をお願いいたします。
-
-- Nodejs LTS
-- Docker環境 (Option)
-
 ### 実行方法
+
+Node.jsのバージョンは16.13.2で動作確認しています。ローカルで開発される場合はこちらに相当するNode環境の準備をお願いいたします。
 
 1. `npm ci` を実行
 2. `npm run dev` を実行
@@ -106,11 +103,12 @@ DBコンテナへのデータ投入については、このREADME.md下部にあ
 
 - Docker環境 (Windows)
 
-VSCode の拡張機能「Dev Containers」を事前にインストールしておき、
-VSCode の Dev Containers から起動する。
+VSCodeを使われている場合は、拡張機能の「Dev Containers」を使うのが便利です。
 ※もし初回でエラーが出たら一度 `docker compose up -d` を実行してみてください。
 
-1. VSCode の画面左下「><」みたいなボタンから「Reopen in Container」を選択
+1. Docker環境の起動 <br>
+  1-a. 通常起動する場合： `docker compose up -d` <br>
+  1-b. Dev Containersを使う場合： VSCodeの画面左下「><」みたいなボタンから「Reopen in Container」を選択 <br>
 1. `npm ci` を実行
 1. `npm run dev` を実行
 1. <http://localhost:3000/> を開く
