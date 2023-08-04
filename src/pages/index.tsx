@@ -10,6 +10,13 @@ export default function Home(props: any) {
   const nutritionArr = numeralNutritions;
   const [xAxis, setXAxis] = React.useState("calories");
   const [yAxis, setYAxis] = React.useState("carbo");
+  const [selectedMfr, setSelectedMfr] = React.useState("all");
+  const [selectedType, setSelectedType] = React.useState("all");
+
+  const uniqueMfrSet: Set<string> = new Set(props.cereals.map((cereal:any) => (cereal.mfr)));
+  uniqueMfrSet.add('all');
+  const uniqueTypeSet: Set<string> = new Set(props.cereals.map((cereal:any) => (cereal.type)));
+  uniqueTypeSet.add('all');
 
   React.useEffect(() => {
     let myChart: any = null;
@@ -71,6 +78,13 @@ export default function Home(props: any) {
       myChart.destroy();
     };
   }, [xAxis, yAxis, props.cereals]);
+
+  React.useEffect(() => {
+    props.cereals.forEach((cereal:any) => {
+      uniqueMfrSet.add(cereal.mfr);
+    })
+  }, [props.cereals])
+
   return (
     <>
       <Head>
@@ -114,6 +128,44 @@ export default function Home(props: any) {
                     </option>
                   );
                 })}
+              </select>
+            </label>
+          </div>
+          <div className="relative w-full lg:max-w-sm">
+            <label>
+              mfr:
+              <select
+                value={selectedMfr}
+                onChange={(e) => setSelectedMfr(e.target.value)}
+              >
+                {
+                  Array.from(uniqueMfrSet).map((mfr:string, index) => {
+                    return (
+                      <option value={mfr} key={index}>
+                        {mfr}
+                      </option>
+                    )
+                  })
+                }
+              </select>
+            </label>
+          </div>
+          <div className="relative w-full lg:max-w-sm">
+            <label>
+              type:
+              <select
+                value={selectedType}
+                onChange={(e) => setSelectedType(e.target.value)}
+              >
+                {
+                  Array.from(uniqueTypeSet).map((type:string, index) => {
+                    return (
+                      <option value={type} key={index}>
+                        {type}
+                      </option>
+                    )
+                  })
+                }
               </select>
             </label>
           </div>
