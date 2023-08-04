@@ -20,7 +20,14 @@ export default function Home(props: any) {
 
   React.useEffect(() => {
     let myChart: any = null;
-    const cereals = props.cereals.map((cereal: any) => {
+    let cereals = props.cereals
+    if (selectedMfr !== 'all') {
+      cereals = cereals.filter((cereal:any) => cereal.mfr === selectedMfr)
+    }
+    if (selectedType !== 'all') {
+      cereals = cereals.filter((cereal:any) => cereal.type === selectedType)
+    }
+    cereals = cereals.map((cereal: any) => {
       return { x: cereal[xAxis], y: cereal[yAxis] };
     });
     const config: any = {
@@ -77,13 +84,7 @@ export default function Home(props: any) {
     return () => {
       myChart.destroy();
     };
-  }, [xAxis, yAxis, props.cereals]);
-
-  React.useEffect(() => {
-    props.cereals.forEach((cereal:any) => {
-      uniqueMfrSet.add(cereal.mfr);
-    })
-  }, [props.cereals])
+  }, [xAxis, yAxis, props.cereals, selectedMfr, selectedType]);
 
   return (
     <>
