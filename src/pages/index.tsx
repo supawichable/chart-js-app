@@ -2,14 +2,19 @@ import Head from 'next/head';
 import { Inter } from '@next/font/google';
 import React from 'react';
 import Chart from 'chart.js/auto';
+import { numeralNutritions } from 'src/constants/numeralNutritions';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home(props: any) {
+  const nutritionArr = numeralNutritions;
+  const [xAxis, setXAxis] = React.useState('calories');
+  const [yAxis, setYAxis] = React.useState('carbo');
+
   React.useEffect(() => {
     let myChart: any = null;
     const cereals = props.cereals.map((cereal: any) => {
-      return { x: cereal.calories, y: cereal.carbo };
+      return { x: cereal[xAxis], y: cereal[yAxis] };
     });
     const config: any = {
       type: 'scatter',
@@ -65,7 +70,7 @@ export default function Home(props: any) {
     return () => {
       myChart.destroy();
     };
-  }, []);
+  }, [xAxis, yAxis]);
   return (
     <>
       <Head>
@@ -78,6 +83,37 @@ export default function Home(props: any) {
         <section style={{ padding: '10pt' }}>
           <h1>chart-js-app</h1>
           <p>シリアルのデータ</p>
+          <div className="relative w-full lg:max-w-sm">
+            <label>
+              X axis:
+              <select
+                value={xAxis}
+                defaultValue={xAxis}
+                onChange={e => setXAxis(e.target.value)}
+              >
+                {
+                  nutritionArr.map((nutrition: string, index) => {
+                    return <option value={nutrition} key={index}>{nutrition}</option>
+                  })
+                }
+              </select>
+            </label>
+          </div>
+          <div className="relative w-full lg:max-w-sm">
+            <label>
+              Y axis:
+              <select
+                value={yAxis}
+                defaultValue={yAxis}
+                onChange={e => setYAxis(e.target.value)}>
+                {
+                  nutritionArr.map((nutrition: string, index) => {
+                    return <option value={nutrition} key={index}>{nutrition}</option>
+                  })
+                }
+              </select>
+            </label>
+          </div>
           <div style={{ width: '400pt' }}>
             <canvas id="myChart" width="300" height="300"></canvas>
           </div>
