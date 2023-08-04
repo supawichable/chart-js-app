@@ -70,7 +70,7 @@ export default function Home(props: any) {
     return () => {
       myChart.destroy();
     };
-  }, [xAxis, yAxis]);
+  }, [xAxis, yAxis, props.cereals]);
   return (
     <>
       <Head>
