@@ -38,7 +38,7 @@ export default function Home(props: any) {
             display: true,
             title: {
               display: true,
-              text: 'Calories',
+              text: xAxis[0].toUpperCase().concat(xAxis.slice(1,)),
               font: {
                 size: 20,
                 weight: 'bold',
@@ -51,7 +51,7 @@ export default function Home(props: any) {
             display: true,
             title: {
               display: true,
-              text: 'Carbo',
+              text: yAxis[0].toUpperCase().concat(yAxis.slice(1,)),
               font: {
                 size: 20,
                 weight: 'bold',
