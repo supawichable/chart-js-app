@@ -88,7 +88,6 @@ export default function Home(props: any) {
               X axis:
               <select
                 value={xAxis}
-                defaultValue={xAxis}
                 onChange={(e) => setXAxis(e.target.value)}
               >
                 {nutritionArr.map((nutrition: string, index) => {
@@ -106,7 +105,6 @@ export default function Home(props: any) {
               Y axis:
               <select
                 value={yAxis}
-                defaultValue={yAxis}
                 onChange={(e) => setYAxis(e.target.value)}
               >
                 {nutritionArr.map((nutrition: string, index) => {
