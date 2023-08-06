@@ -180,7 +180,7 @@ export default function Home(props: any) {
 }
 
 export async function getServerSideProps(context: any) {
-  const response = await fetch("http://localhost:3000/api/cereals");
+  const response = await fetch("https://chart-js-plcm5yu24-supawichable.vercel.app/api/cereals");
   const cereals = await response.json();
   return {
     props: { cereals },
