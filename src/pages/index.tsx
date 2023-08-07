@@ -96,80 +96,90 @@ export default function Home(props: any) {
       </Head>
       <main>
         <section style={{ padding: "10pt" }}>
-          <h1>chart-js-app</h1>
-          <p>シリアルのデータ</p>
-          <div className="relative w-full lg:max-w-sm">
-            <label>
-              X axis:
-              <select
-                value={xAxis}
-                onChange={(e) => setXAxis(e.target.value)}
-              >
-                {nutritionArr.map((nutrition: string, index) => {
-                  return (
-                    <option value={nutrition} key={index}>
-                      {nutrition}
-                    </option>
-                  );
-                })}
-              </select>
-            </label>
-          </div>
-          <div className="relative w-full lg:max-w-sm">
-            <label>
-              Y axis:
-              <select
-                value={yAxis}
-                onChange={(e) => setYAxis(e.target.value)}
-              >
-                {nutritionArr.map((nutrition: string, index) => {
-                  return (
-                    <option value={nutrition} key={index}>
-                      {nutrition}
-                    </option>
-                  );
-                })}
-              </select>
-            </label>
-          </div>
-          <div className="relative w-full lg:max-w-sm">
-            <label>
-              mfr:
-              <select
-                value={selectedMfr}
-                onChange={(e) => setSelectedMfr(e.target.value)}
-              >
-                {
-                  Array.from(uniqueMfrSet).map((mfr:string, index) => {
+          <h1 className="text-4xl font-bold mt-4 mb-2">chart-js-app</h1>
+          <p className="mt-2">Cereal nutritional data</p>
+          <hr className="mt-2 mb-2"/>
+          <div className="grid grid-rows-3 grid-flow-col gap-2 mt-4 mb-4">
+            <h3 className="font-bold">Select nutritions to visualize</h3>
+            <div className="relative w-full lg:max-w-sm">
+              <label>
+                X axis:
+                <select
+                  value={xAxis}
+                  onChange={(e) => setXAxis(e.target.value)}
+                  className="border border-gray-300 rounded-lg ml-2"
+                >
+                  {nutritionArr.map((nutrition: string, index) => {
                     return (
-                      <option value={mfr} key={index}>
-                        {mfr}
+                      <option value={nutrition} key={index}>
+                        {nutrition}
                       </option>
-                    )
-                  })
-                }
-              </select>
-            </label>
-          </div>
-          <div className="relative w-full lg:max-w-sm">
-            <label>
-              type:
-              <select
-                value={selectedType}
-                onChange={(e) => setSelectedType(e.target.value)}
-              >
-                {
-                  Array.from(uniqueTypeSet).map((type:string, index) => {
+                    );
+                  })}
+                </select>
+              </label>
+            </div>
+            <div className="relative w-full lg:max-w-sm">
+              <label>
+                Y axis:
+                <select
+                  value={yAxis}
+                  onChange={(e) => setYAxis(e.target.value)}
+                  className="border border-gray-300 rounded-lg ml-2"
+                >
+                  {nutritionArr.map((nutrition: string, index) => {
                     return (
-                      <option value={type} key={index}>
-                        {type}
+                      <option value={nutrition} key={index}>
+                        {nutrition}
                       </option>
-                    )
-                  })
-                }
-              </select>
-            </label>
+                    );
+                  })}
+                </select>
+              </label>
+            </div>
+            <h3 className="font-bold">Select filtering conditions</h3>
+            <div className="relative w-full lg:max-w-sm">
+              <label>
+                mfr:
+                <select
+                  value={selectedMfr}
+                  onChange={(e) => setSelectedMfr(e.target.value)}
+                  className="border border-gray-300 rounded-lg ml-2"
+                >
+                  {
+                    Array.from(uniqueMfrSet).map((mfr:string, index) => {
+                      return (
+                        <option value={mfr} key={index}>
+                          {mfr}
+                        </option>
+                      )
+                    })
+                  }
+                </select>
+              </label>
+            </div>
+            <div className="relative w-full lg:max-w-sm">
+              <label>
+                type:
+                <select
+                  value={selectedType}
+                  onChange={(e) => setSelectedType(e.target.value)}
+                  className="border border-gray-300 rounded-lg ml-2"
+                >
+                  {
+                    Array.from(uniqueTypeSet).map((type:string, index) => {
+                      return (
+                        <option value={type} key={index}>
+                          {type}
+                        </option>
+                      )
+                    })
+                  }
+                </select>
+              </label>
+            </div>
           </div>
+          <hr className="mt-2 mb-2"/>
           <div style={{ width: "400pt" }}>
             <canvas id="myChart" width="300" height="300"></canvas>
           </div>
