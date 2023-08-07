@@ -1,7 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { cereals } from "../../constants/cereals";
+import { PrismaClient } from '@prisma/client'
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+const prisma = new PrismaClient()
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const cereals = await prisma.cereals.findMany()
   res.status(200).json(cereals);
 }
