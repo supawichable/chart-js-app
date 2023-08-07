@@ -6,7 +6,5 @@ const prisma = new PrismaClient()
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const cereals = await prisma.cereals.findMany()
-  console.log("Cereals API")
-  console.log(cereals)
   res.status(200).json(cereals);
 }
