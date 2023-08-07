@@ -1,6 +1,6 @@
 # chart-js-app
 
-This application is an app tht visualizes nutrinutional data of different types/brands of cereals. It is modified upon the original version on branch [feature/#3_update_coding_test]<https://github.com/supawichable/chart-js-app/tree/feature/%233_update_coding_test>.
+This application is an app tht visualizes nutrinutional data of different cereal types/brands. It is modified upon the original version on branch [feature/#3_update_coding_test](https://github.com/supawichable/chart-js-app/tree/feature/%233_update_coding_test).
 
 ## Implemented Features
 1. Selectable Chart Axes
