@@ -3,13 +3,13 @@
 This application is an app tht visualizes nutrinutional data of different cereal types/brands. It is modified upon the original version on branch [feature/#3_update_coding_test](https://github.com/supawichable/chart-js-app/tree/feature/%233_update_coding_test).
 
 ## Implemented Features
-1. Selectable Chart Axes \n
+1. Selectable Chart Axes \
    Users can choose which nutritions they would like to visualize on both axes of the graph through dropdowns on top of the chart. Selectable nutritions are limited to nutrition that are numeral.
 
-2. Data Filtering Condition \n
+2. Data Filtering Condition \
    Users can add conditions to filter down to only data they want to visualize on the chart. Implemeted conditions are `mfr` and `type`. Users can choose to filter using none, one, or both of the data. Note that the chart might becomes empty if there are no corresponded data points.
 
-3. Fetching Data from Database \n
+3. Fetching Data from Database \
    The app is implemented so that the cereals data are fetched from a separate Postgres database container through Prisma. 
 
 ## Additional Implementation
