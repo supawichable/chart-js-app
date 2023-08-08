@@ -13,12 +13,12 @@ This application is an app tht visualizes nutrinutional data of different cereal
    The app is implemented so that the cereals data are fetched from a separate Postgres database container through Prisma. 
 
 ## Additional Implementation
-1. Deployment to Vercel \n
+1. Deployment to Vercel \
    The app is also deployed to vercel at <https://chart-js-app-lime.vercel.app/>.
 
-2. ESlint and Prettier \n
-   ESlint and Prettier are both set up. To avoid conflict between the two libraries, ESlint is use for code-quality concerns while Prettier is responsible for stylistic concerns in this case. \n
-   ESlint rules are written in `.eslintrc.json` file and can be executed using the command line `npm run lint`. \n
+2. ESlint and Prettier \
+   ESlint and Prettier are both set up. To avoid conflict between the two libraries, ESlint is use for code-quality concerns while Prettier is responsible for stylistic concerns in this case. \
+   ESlint rules are written in `.eslintrc.json` file and can be executed using the command line `npm run lint`. \
    Prettier rules are written in `.prettierrc.json` file and can be executed using the command line `npm run format`
 
 ## How to run the app without Docker
